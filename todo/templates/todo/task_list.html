@@ -1,8 +1,15 @@
 {% extends 'todo/main.html' %}
 
 {% block content %}
+
 <style>
     h3{
+    color:#fff;
+    }
+    .pleft{
+    margin-left:23px
+    }
+    #add-link{
     color:#fff;
     }
 </style>
@@ -48,9 +55,10 @@
         {% endif %}
         
     </div>
+
     {% empty %}
-    <h3>No items in list</h3>
-    <a href="{% url 'task-create' %}">Add New Item</a>
+    <h3 class="pleft">No items in list</h3>
+    <a class="pleft"href="{% url 'task-create' %}">Add New Item</a>
     {% endfor %}
 
 </div>
