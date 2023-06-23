@@ -5,20 +5,29 @@
    small p{
    color:#fff;
    }
+   .cond{
+   color:#fff;
+   margin-bottom:0px;
+   }
+
 
 </style>
 <div class="header-bar">
     <h1>Register</h1>
 </div>
+
 <div class="card-body">
     <form action="" method="post">
         {% csrf_token %}
-        <label>{{ form.username.label }}</label>
+        <label >{{ form.username.label }}</label>
         {{ form.username }}
-    
+    <p class="cond">Required. 150 characters or fewer. Letters, digits and @/ ./+/-/_ only.</p>
         <label>{{ form.password1.label }}</label>
         {{ form.password1 }}
-    
+
+            <p class="cond">Your password must contain at least 8 characters</p>
+            <p class="cond">Your password can't be entirely numeric</p>
+
         <label>{{ form.password2.label }}</label>
         {{ form.password2 }}
         <br><br>
